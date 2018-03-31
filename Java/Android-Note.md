@@ -1,0 +1,4 @@
+StringBuilder类
+Random类
+内部类
+Static修饰符的使用
