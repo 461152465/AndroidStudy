@@ -1,5 +1,8 @@
 package com.example.fragmenttest;
 
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,7 +21,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v){
+        switch(v.getId()){
+            case R.id.button:
+                replaceFragment(new AnotherRightFragment());
+                break;
+            default:
+                break;
+        }
 
+    }
+
+
+    public void replaceFragment(Fragment fragment){
+       /* //得到支持v4包的Fragment
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        transaction.replace(R.id.right_layout, fragment);
+        transaction.addToBackStack(null);
+        transaction.commit();*/
     }
 
 }
