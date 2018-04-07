@@ -2,4 +2,5 @@
     <string name="app_name">BroadcastBestPractice</string>
     <string name="Account">Account:</string>
     <string name="textPassword">Password</string>
+    <string name="SendForceOffline">Send force offline broadcast</string>
 </resources>
