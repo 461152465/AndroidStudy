@@ -69,3 +69,31 @@ public class Test {
 首先定义了一个抽象类Bird，抽象类是不能直接new创建对象的，所以使用test(new Bird() {父类构造器 + 接口 + 方法});
 相当于在test()方法中创建了一个只能使用一次的匿名的类，这个类继承了Bird（）抽象类
 实现匿名内部类的方式是实现一个接口或者继承一个类，上面的代码继承了Bird()抽象类，而Android的button则是实现了onClickListener接口
+
+---
+Android Studio中如果要使用RecyclerView，需要在app/gradle中添加相应的依赖，而且对于依赖的版本有要求，可以File -> Project Structure -> app -> dependencies中查询对应版本的包，然后添加。
+在Layout中创建需要的布局，然后可以在Class里通过R.id.xxx_layout加载相应的布局。
+
+关于XML语言的基本语法总结
+```xml
+对于一般的元素，格式：
+<TextView 元素属性/>
+<View 元素属性/>
+对于Layout布局，格式：
+<LinearLayout 元素属性> </LinearLayout>
+
+//example
+<LinearLayout 
+android:id="@+id/layout">
+</LinearLayout>
+```
+
+在类中记载布局的方法，重写onCreate方法
+```java
+@Override
+    public View onCreatView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        View view = inflater.inflate(R.layout.news_title_frag, container, false);
+        return view;
+    }
+```
+其中LayoutInflater引用res/layout中的xml布局，类似于findViewById因为layout中的widget一样。
